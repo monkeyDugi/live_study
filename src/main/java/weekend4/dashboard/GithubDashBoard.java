@@ -1,3 +1,5 @@
+package weekend4.dashboard;
+
 import org.kohsuke.github.*;
 
 import java.io.IOException;
@@ -6,7 +8,7 @@ import java.util.*;
 
 public class GithubDashBoard {
 
-    private final static String TOKEN = "my_token";
+    private final static String TOKEN = "6027f6f5992b8e77e77452ef302c6ecc9b917a0c";
 
     public static void main(String[] args) throws IOException {
         GitHub gitHub = new GitHubBuilder().withOAuthToken(TOKEN).build();
