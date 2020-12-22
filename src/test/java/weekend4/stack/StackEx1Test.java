@@ -1,7 +1,7 @@
 package weekend4.stack;
 
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class StackEx1Test {
 
