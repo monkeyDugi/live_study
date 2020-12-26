@@ -1,6 +1,5 @@
 package weekend4.linkedList;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class LinkedListTest {
@@ -10,8 +9,17 @@ class LinkedListTest {
 
         LinkedList linkedList = new LinkedList();
 
-        linkedList.addFirst(30);
-        linkedList.addFirst(20);
-        linkedList.addFirst(10);
+        linkedList.addLast(10);
+        linkedList.addLast(20);
+        linkedList.addLast(30);
+        linkedList.addLast(40);
+
+        LinkedList.ListIterator iterator = linkedList.listIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+
+        System.out.println(linkedList);
     }
 }
