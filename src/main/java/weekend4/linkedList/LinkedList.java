@@ -135,6 +135,22 @@ public class LinkedList {
         return index;
     }
 
+    public boolean contains(Object data) {
+        // 탐색 대상이 되는 노드를 temp로 지정
+        Node temp = head;
+        // 탐색 값과 탐색 대상 값 비교
+        while (temp.data != data) {
+            temp = temp.next;
+            // temp 값이 null이면 탐색할 노드가 없기 때문에 false 반환
+            if (temp == null) {
+                return false;
+            }
+        }
+
+        // 탐색 노드를 찾았다면 index 리턴
+        return true;
+    }
+
     public ListIterator listIterator() {
         return new ListIterator();
     }
@@ -162,6 +178,30 @@ public class LinkedList {
 
         public boolean hasNext() {
             return nextIndex < size();
+        }
+
+        public void add(Object input) {
+            Node newNode = new Node(input);
+
+            if (lastReturned == null) {
+                head = newNode;
+                newNode.next = next;
+            } else {
+                lastReturned.next = newNode;
+                newNode.next = next;
+                lastReturned = newNode;
+            }
+
+            nextIndex++;
+            size++;
+        }
+
+        public void remove() {
+            if (nextIndex == 0) {
+                throw new IllegalStateException();
+            }
+
+            LinkedList.this.remove(--nextIndex);
         }
     }
 

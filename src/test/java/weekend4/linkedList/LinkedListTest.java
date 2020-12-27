@@ -14,12 +14,10 @@ class LinkedListTest {
         linkedList.addLast(30);
         linkedList.addLast(40);
 
-        LinkedList.ListIterator iterator = linkedList.listIterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
-
-
-        System.out.println(linkedList);
+        System.out.println(linkedList.contains(10)); // true
+        System.out.println(linkedList.contains(20)); // true
+        System.out.println(linkedList.contains(30)); // true
+        System.out.println(linkedList.contains(40)); // true
+        System.out.println(linkedList.contains(50)); // false
     }
 }
